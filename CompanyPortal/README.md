@@ -6,10 +6,10 @@
 
 # Download Company Portal and run msi with msiexec silently
 #  --------------------------------------------------------------------------------------------------------
-$url = 'https://github.com/brathen/pub/raw/main/CompanyPortal/Microsoft.CompanyPortal.11.1.523.0.x86.msi'
+$url = 'https://github.com/brathen/pub/raw/main/CompanyPortal/latest/Microsoft.CompanyPortal'
 $Filename = $url.Split('/')[-1]
 Invoke-WebRequest -UseBasicParsing -Uri $URL -OutFile "$env:TEMP\$Filename" -ErrorAction SilentlyContinue
-Start-Process -FilePath 'msiexec' -ArgumentList "/i `"$env:TEMP\$Filename`" /qb!" -Wait
+Start-Process -FilePath 'msiexec' -ArgumentList "/i `"$env:TEMP\$Filename`" /qb!-" -Wait
 #  --------------------------------------------------------------------------------------------------------
 
 ```
@@ -20,7 +20,7 @@ Start-Process -FilePath 'msiexec' -ArgumentList "/i `"$env:TEMP\$Filename`" /qb!
 
 # Download Company Portal and run msi with msiexec silently
 #  --------------------------------------------------------------------------------------------------------
-Start-Process -FilePath 'msiexec' -ArgumentList "/x `"Microsoft.CompanyPortal.11.1.523.0.x86.msi`" /qb!" -Wait
+Start-Process -FilePath 'msiexec' -ArgumentList "/x `"{E9986D93-2AFB-4323-8B43-77FB3DB99AF8}`" /qb!-" -Wait
 #  --------------------------------------------------------------------------------------------------------
 
 ```
